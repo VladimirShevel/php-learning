@@ -38,11 +38,11 @@ class QueryBuilder
 
             $statement->execute($parameters);
 
-            echo '<h2>Ваша запись добавлена</h2>';
+            echo '<h2>Ваш запис додано</h2>';
 
         } catch (Exception $e) {
-
-            echo 'Не удалось добавить запись в базу данных.';
+            error_log($e);
+            echo 'Запис до бази даних додано не було ((';
 
         }
 
