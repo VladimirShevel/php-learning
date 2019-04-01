@@ -11,10 +11,11 @@
 </head>
 <body>
 <div>
-    <form method="post" onsubmit="window.location.reload()" action="/about/culture" enctype="multipart/form-data" >
+    <form method="post" onsubmit="window.location.reload()" action="" enctype="multipart/form-data" >
         <fieldset>
             <legend>Personal data</legend>
             <br>
+
             <input type="text" placeholder="Firstname" name="name" required>
             <br><br>
             <input type="text" placeholder="Lastname" name="surname">
@@ -24,9 +25,6 @@
             <br><br>
             <br>
             <textarea name="message" placeholder="Please leave your message:" rows="10" cols="40"></textarea> <br>
-
-
-            <!-- <input type="hidden" name="MAX_FILE_SIZE" value="5000"> -->
 
             <input type="file" name="fileup" required/>
 

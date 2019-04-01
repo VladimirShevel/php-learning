@@ -4,12 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite03b85fe67de008538f5277c344aa6be
+class ComposerStaticInit7fd44013b5c8bd4d159ec066bb7f0ed6
 {
     public static $classMap = array (
-        'ComposerAutoloaderInite03b85fe67de008538f5277c344aa6be' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'App' => __DIR__ . '/../..' . '/core/App.php',
+        'ComposerAutoloaderInit7fd44013b5c8bd4d159ec066bb7f0ed6' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
-        'Composer\\Autoload\\ComposerStaticInite03b85fe67de008538f5277c344aa6be' => __DIR__ . '/..' . '/composer/autoload_static.php',
+        'Composer\\Autoload\\ComposerStaticInit7fd44013b5c8bd4d159ec066bb7f0ed6' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
         'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/../..' . '/core/mailer/Exception.php',
         'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/../..' . '/core/mailer/PHPMailer.php',
@@ -22,7 +23,7 @@ class ComposerStaticInite03b85fe67de008538f5277c344aa6be
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInite03b85fe67de008538f5277c344aa6be::$classMap;
+            $loader->classMap = ComposerStaticInit7fd44013b5c8bd4d159ec066bb7f0ed6::$classMap;
 
         }, null, ClassLoader::class);
     }

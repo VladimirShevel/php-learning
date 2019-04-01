@@ -1,15 +1,17 @@
 <?php
 class Router
 {
-    protected $routes;
+    public $routes;
     
     public function __construct()
     {
-        $this->routes = [];
+        $this->routes = [
+            'GET' =>[],
+            'POST' =>[]
+        ];
     }
 
-
-    public function load($file)
+    public static function load($file)
     {
         $router = new static ;
         require $file;
