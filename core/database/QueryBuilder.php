@@ -1,61 +1,51 @@
 <?php
 
-class QueryBuilder 
+class QueryBuilder
 
 {
+    protected $pdo;
 
-	protected $pdo;
+    public function __construct($pdo)
+    {
+        $this->pdo = $pdo;
+    }
 
-	public function __construct($pdo)
+    public function selectAll($table)
 
-	{
+    {
 
-		$this->pdo = $pdo;
+        $statement = $this->pdo->prepare("select * from {$table}");
 
-	}
+        $statement->execute();
 
-	
-	public function selectAll($table)
+        return $statement->fetchall(PDO::FETCH_CLASS);
 
-	{
+    }
 
-		$statement = $this->pdo->prepare("select * from {$table}");
+    public function insert($table, $parameters)
+    {
+        $sql = sprintf(
 
-		$statement->execute();
+            'insert into %s (%s) values (%s)',
+            $table,
+            implode(', ', array_keys($parameters)),
+            ':' . implode(', :', array_keys($parameters))
+        );
 
-		return $statement->fetchall(PDO::FETCH_CLASS);
+        try {
 
-	}	
+            $statement = $this->pdo->prepare($sql);
 
+            $statement->execute($parameters);
 
-	public function insert ($table, $parameters)
-	{
+            echo '<h2>Ваша запись добавлена</h2>';
 
-		$sql = sprintf (
+        } catch (Exception $e) {
 
-			'insert into %s (%s) values (%s)',
+            echo 'Не удалось добавить запись в базу данных.';
 
-			$table, 
+        }
 
-			implode(', ', array_keys($parameters)),
-			':' . implode(', :', array_keys($parameters))
-
-		);
-
-	try {
-
-		$statement = $this->pdo->prepare($sql);
-
-		$statement->execute($parameters); 
-
-		echo (' Ваша запись добавлена');
-		
-		} catch (Exception $e) {
-
-			echo ('Не удалось добавить запись в базу данных.');
-
-		}
-
-	}
+    }
 
 }
