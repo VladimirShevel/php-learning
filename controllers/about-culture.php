@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 //    move_uploaded_file($image_tmp, "data/images/$image");
 
 
-    //require 'sendmail.php';
+    require 'sendmail.php';
 
 
     $app['database']->insert('customer', [
