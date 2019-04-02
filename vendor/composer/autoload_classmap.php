@@ -6,15 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App' => $baseDir . '/core/App.php',
+    'App\\Core\\App' => $baseDir . '/core/App.php',
+    'App\\Core\\Database\\Connection' => $baseDir . '/core/database/Connection.php',
+    'App\\Core\\Database\\QueryBuilder' => $baseDir . '/core/database/QueryBuilder.php',
+    'App\\Core\\Request' => $baseDir . '/core/Request.php',
+    'App\\Core\\Router' => $baseDir . '/core/Router.php',
     'ComposerAutoloaderInit7fd44013b5c8bd4d159ec066bb7f0ed6' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInit7fd44013b5c8bd4d159ec066bb7f0ed6' => $vendorDir . '/composer/autoload_static.php',
-    'Connection' => $baseDir . '/core/database/Connection.php',
-    'PHPMailer\\PHPMailer\\Exception' => $baseDir . '/core/mailer/Exception.php',
-    'PHPMailer\\PHPMailer\\PHPMailer' => $baseDir . '/core/mailer/PHPMailer.php',
-    'PHPMailer\\PHPMailer\\SMTP' => $baseDir . '/core/mailer/SMTP.php',
-    'QueryBuilder' => $baseDir . '/core/database/QueryBuilder.php',
-    'Request' => $baseDir . '/core/Request.php',
-    'Router' => $baseDir . '/core/Router.php',
+    'Core\\Mailer\\Exception' => $baseDir . '/core/mailer/Exception.php',
+    'Core\\Mailer\\PHPMailer' => $baseDir . '/core/mailer/PHPMailer.php',
+    'Core\\Mailer\\SMTP' => $baseDir . '/core/mailer/SMTP.php',
 );

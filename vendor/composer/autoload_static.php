@@ -7,17 +7,17 @@ namespace Composer\Autoload;
 class ComposerStaticInit7fd44013b5c8bd4d159ec066bb7f0ed6
 {
     public static $classMap = array (
-        'App' => __DIR__ . '/../..' . '/core/App.php',
+        'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
+        'App\\Core\\Database\\Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
+        'App\\Core\\Database\\QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
+        'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
+        'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
         'ComposerAutoloaderInit7fd44013b5c8bd4d159ec066bb7f0ed6' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit7fd44013b5c8bd4d159ec066bb7f0ed6' => __DIR__ . '/..' . '/composer/autoload_static.php',
-        'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
-        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/../..' . '/core/mailer/Exception.php',
-        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/../..' . '/core/mailer/PHPMailer.php',
-        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/../..' . '/core/mailer/SMTP.php',
-        'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
-        'Request' => __DIR__ . '/../..' . '/core/Request.php',
-        'Router' => __DIR__ . '/../..' . '/core/Router.php',
+        'Core\\Mailer\\Exception' => __DIR__ . '/../..' . '/core/mailer/Exception.php',
+        'Core\\Mailer\\PHPMailer' => __DIR__ . '/../..' . '/core/mailer/PHPMailer.php',
+        'Core\\Mailer\\SMTP' => __DIR__ . '/../..' . '/core/mailer/SMTP.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

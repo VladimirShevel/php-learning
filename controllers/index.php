@@ -1,4 +1,7 @@
 <?php
+
+use App\Core\App;
+
 function test_text_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
